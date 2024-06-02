@@ -111,7 +111,7 @@ def delete_task(request, task_id):
         task.delete()
         return redirect('tasks')
     
-@login_required
+
 def lista_productos(request): 
     productos_json = '''
     {
