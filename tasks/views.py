@@ -112,38 +112,164 @@ def delete_task(request, task_id):
         return redirect('tasks')
     
 
-def lista_productos(request, product_id=None):
-    
-    productos = {
-        "301": {
-            "productId": 301,
-            "Descripcion": "Lentes de Lectura",
-            "Preciocosto": "3000",
-            "Precio": "6000",
-            "Fechaingreso": "01/03/2023",
-            "ProductImage": "https://i.postimg.cc/LXBGbNqj/lentes-bluefilter.jpg",
-            "ProductName": "Lentes de Lectura",
-            "ProductPrice": "$60.00",
-            "ProductDescripcion": "Lentes de lectura con aumento, disponibles en varios grados.",
-            "ProductDetalle": "Elegantes y funcionales, ideales para leer libros y revistas.",
-            "id": "301"
-        },
-        "302": {
-            "productId": 302,
-            "Descripcion": "Lentes Deportivos",
-            "Preciocosto": "7000",
-            "Precio": "10000",
-            "Fechaingreso": "01/03/2023",
-            
-        },
-        
+def lentes_de_lectura(request):
+    producto = {
+        "productId": 301,
+        "Descripcion": "Lentes de Lectura",
+        "Preciocosto": "3000",
+        "Precio": "6000",
+        "Fechaingreso": "01/03/2023",
+        "ProductImage": "https://i.postimg.cc/LXBGbNqj/lentes-bluefilter.jpg",
+        "ProductName": "Lentes de Lectura",
+        "ProductPrice": "$60.00",
+        "ProductDescripcion": "Lentes de lectura con aumento, disponibles en varios grados.",
+        "ProductDetalle": "Elegantes y funcionales, ideales para leer libros y revistas.",
+        "id": "301"
     }
-    
-    if product_id is not None:
-        producto = productos.get(product_id)
-        if producto:
-            return JsonResponse(producto)
-        else:
-            return JsonResponse({"error": "Producto no encontrado"}, status=404)
-    
-    return JsonResponse({"productos": productos})
+    return JsonResponse(producto)
+
+def lentes_deportivos(request):
+    producto = {
+        "productId": 302,
+        "Descripcion": "Lentes Deportivos",
+        "Preciocosto": "7000",
+        "Precio": "10000",
+        "Fechaingreso": "01/03/2023",
+        "ProductImage": "https://i.postimg.cc/JzSwDyVH/gafas-deportivas.jpg",
+        "ProductName": "Lentes Deportivos",
+        "ProductPrice": "$100.00",
+        "ProductDescripcion": "Lentes diseñados para actividades deportivas, ofrecen protección y visión clara.",
+        "ProductDetalle": "Incluye estuche deportivo y cinta ajustable.",
+        "id": "302"
+    }
+    return JsonResponse(producto)
+  
+def lentes_de_natacion(request):
+  producto = {
+        "productId": 303,
+        "Descripcion": "Lentes de Natación",
+        "Preciocosto": "11000",
+        "Precio": "16000",
+        "Fechaingreso": "01/03/2023",
+        "ProductImage": "https://i.postimg.cc/rwDXw1bL/gafas-natacion.jpg",
+        "ProductName": "Lentes de Natación",
+        "ProductPrice": "$160.00",
+        "ProductDescripcion": "Lentes diseñados para natación, proporcionan visión clara bajo el agua.",
+        "ProductDetalle": "Disponibles en diferentes tamaños y estilos.",
+        "id": "303"
+    }
+  return JsonResponse(producto)
+  
+def gafas_de_proteccion(request):
+  producto = {
+        "productId": 304,
+          "Descripcion": "Gafas de Protección",
+          "Preciocosto": "15000",
+          "Precio": "18000",
+          "Fechaingreso": "01/03/2023",
+          "ProductImage": "https://i.postimg.cc/63NDcDQ9/gafas-de-proteccion.jpg",
+          "ProductName": "Gafas de Protección",
+          "ProductPrice": "$180.00",
+          "ProductDescripcion": "Gafas de seguridad para protección ocular en entornos peligrosos.",
+          "ProductDetalle": "Resistentes a impactos y ralladuras.",
+          "id": "304"
+    }
+  return JsonResponse(producto)
+  
+def lentes_de_ninos(request):
+  producto = {
+        "productId": 305,
+          "Descripcion": "Lentes de Niños",
+          "Preciocosto": "17000",
+          "Precio": "20000",
+          "Fechaingreso": "01/03/2023",
+          "ProductImage": "https://i.postimg.cc/HWzf0v1g/lentes-de-ni-o.jpg",
+          "ProductName": "Lentes de Niños",
+          "ProductPrice": "$200.00",
+          "ProductDescripcion": "Lentes diseñados especialmente para niños, cómodos y resistentes.",
+          "ProductDetalle": "Disponibles en colores y diseños divertidos.",
+          "id": "305"
+    }
+  return JsonResponse(producto) 
+
+def lentes_de_tendencia(request):
+  producto = {
+        "productId": 306,
+          "Descripcion": "Lentes de Tendencia",
+          "Preciocosto": "22000",
+          "Precio": "25000",
+          "Fechaingreso": "01/03/2023",
+          "ProductImage": "https://i.postimg.cc/VkhwqGM6/product-lentestendencia.jpg",
+          "ProductName": "Lentes de Tendencia",
+          "ProductPrice": "$250.00",
+          "ProductDescripcion": "Lentes de moda con diseños exclusivos y materiales de calidad.",
+          "ProductDetalle": "Únete a la última tendencia en gafas de sol y graduadas.",
+          "id": "306"
+    }
+  return JsonResponse(producto)   
+  
+def lentes_multifocales(request):
+  producto = {
+        "productId": 307,
+          "Descripcion": "Lentes Multifocales",
+          "Preciocosto": "27000",
+          "Precio": "30000",
+          "Fechaingreso": "01/03/2023",
+          "ProductImage": "https://i.postimg.cc/m2rKm3TF/lentes-multifocal.jpg",
+          "ProductName": "Lentes Multifocales",
+          "ProductPrice": "$300.00",
+          "ProductDescripcion": "Lentes con múltiples focos de visión para corregir la presbicia.",
+          "ProductDetalle": "Incluye tratamientos antirreflejos y anti-ralladuras.",
+          "id": "307"
+    }
+  return JsonResponse(producto)   
+  
+def lentes_de_sol(request):
+  producto = {
+        "productId": 308,
+          "Descripcion": "Lentes de Sol",
+          "Preciocosto": "25000",
+          "Precio": "28000",
+          "Fechaingreso": "01/03/2023",
+          "ProductImage": "https://i.postimg.cc/g0hCvYmS/lente-de-sol.jpg",
+          "ProductName": "Lentes de Sol",
+          "ProductPrice": "$280.00",
+          "ProductDescripcion": "Lentes de sol para protección contra los rayos UV y el deslumbramiento.",
+          "ProductDetalle": "Disponibles en diferentes estilos y colores.",
+          "id": "308"
+    }
+  return JsonResponse(producto)   
+  
+def lentes_Bluefilter(request):
+  producto = {
+        "productId": 309,
+          "Descripcion": "Lentes Bluefilter",
+          "Preciocosto": "17000",
+          "Precio": "20000",
+          "Fechaingreso": "01/03/2023",
+          "ProductImage": "https://i.postimg.cc/LXBGbNqj/lentes-bluefilter.jpg",
+          "ProductName": "Lentes Bluefilter",
+          "ProductPrice": "$200.00",
+          "ProductDescripcion": "Lentes con filtro de luz azul para proteger los ojos de la fatiga digital.",
+          "ProductDetalle": "Diseñados para uso prolongado frente a pantallas.",
+          "id": "309"
+    }
+  return JsonResponse(producto)   
+  
+def lentes_para_Lejos(request):
+  producto = {
+        "productId": 310,
+          "Descripcion": "Lentes para Lejos",
+          "Preciocosto": "37000",
+          "Precio": "40000",
+          "Fechaingreso": "01/03/2023",
+          "ProductImage": "https://i.postimg.cc/hv26Sv1j/lentes-de-lejos.jpg",
+          "ProductName": "Lentes para Lejos",
+          "ProductPrice": "$400.00",
+          "ProductDescripcion": "Lentes diseñados para una visión clara a larga distancia.",
+          "ProductDetalle": "Ideales para actividades al aire libre y deportes.",
+          "id": "310"
+    }
+  return JsonResponse(producto)   
+
+ 
