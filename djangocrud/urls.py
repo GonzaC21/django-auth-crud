@@ -29,7 +29,6 @@ urlpatterns = [
     path('tasks/<int:task_id>', views.task_detail, name='task_detail'),
     path('taks/<int:task_id>/complete', views.complete_task, name='complete_task'),
     path('tasks/<int:task_id>/delete', views.delete_task, name='delete_task'),
-    path('lista_productos/', views.lista_productos, name='lista_productos'),
     path('lentes-de-lectura/', views.lentes_de_lectura, name='lentes-de-lectura'),
     path('lentes-deportivos/', views.lentes_deportivos, name='lentes-deportivos'),
     path('lentes-de-natacion/', views.lentes_de_natacion, name='lentes-de-natacion'),
