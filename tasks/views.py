@@ -112,7 +112,7 @@ def delete_task(request, task_id):
         return redirect('tasks')
     
 
-def lista_productos(request): 
+def lista_productos(request, product_id=None):
     productos_json = '''
     {
       "productos": [
@@ -253,4 +253,13 @@ def lista_productos(request):
       ]
     }
     '''
-    return JsonResponse(json.loads(productos_json))
+
+    productos = json.loads(productos_json)["productos"]
+    
+    if product_id is not None:
+        for producto in productos:
+            if producto["id"] == product_id:
+                return JsonResponse(producto)
+        return JsonResponse({"error": "Producto no encontrado"}, status=404)
+    
+    return JsonResponse({"productos": productos})
